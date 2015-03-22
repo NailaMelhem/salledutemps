@@ -2,18 +2,23 @@ application.controller('GlobalUserController', function ($scope, $sce, UserServi
 		//alert("passe par la 2");
 		$scope.GLuser=(verfierConnection())?LocalStorageService.get('user')[0]:"";
 		$scope.statusCo=verfierConnection();
-		console.log('appUser user :', $scope.GLuser);
+		console.log('user :', $scope.GLuser);
 		
 	$scope.afficherUser = function(){
 		//alert("affuser"+$scope.GLuser.pseudo+LocalStorageService.isKey('user'));
 		//return $scope.user.pseudo;
 		$scope.GLuser=(verfierConnection())?LocalStorageService.get('user')[0]:"";
 		if(LocalStorageService.isKey('user')){
+			$scope.statusCo=verfierConnection();
+			//alert("statusCo : "+$scope.statusCo);
 			return $sce.trustAsHtml("Bienvenue "+$scope.GLuser.pseudo);
 		}else{
+			$scope.statusCo=verfierConnection();
+			//alert("statusCo2 : "+$scope.statusCo);
 			return $sce.trustAsHtml("<a href='#/login'>se Connecter</a>");
 		}
-		$scope.statusCo=verfierConnection();
+		
+		
 	}
 
 	function verfierConnection(){
@@ -29,10 +34,12 @@ application.controller('GlobalUserController', function ($scope, $sce, UserServi
 
 	$scope.deconnecter = function(){
 		console.log("ici");
-		alert('ici');
+		alert('deco');
 		LocalStorageService.flush();
 		$scope.GLuser=null;
 		$scope.statusCo=verfierConnection();
+		alert('deco'+$scope.statusCo);
+		afficherUser();
 		return true;
 	}
 
