@@ -7,6 +7,7 @@ application.controller('UserController', function ($scope, $sce, UserService,  $
 		
 		if(user.response===false){
 			LocalStorageService.remove("user");
+			//LocalStorageService.remove("user");
 			$scope.message=user.apiErrorMessage;
 		}else{
 			LocalStorageService.save({'user': user.response });

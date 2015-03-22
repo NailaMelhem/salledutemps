@@ -41,7 +41,7 @@ application.service('LocalStorageService', function ($rootScope, $window){
 			output = $window.localStorage[key];
 			console.log("get",output);
 		}
-		alert(output);
+		//alert(output);
 		return output;
 	}
 
@@ -104,7 +104,7 @@ application.service('LocalStorageService', function ($rootScope, $window){
 		get 	: get,
 		save 	: save,
 		isKey 	: isKey,
-		delete 	: remove,
+		remove 	: remove,
 		flush 	: flush
 	};	
 });

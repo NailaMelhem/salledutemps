@@ -45,6 +45,12 @@ header{
     background-color: #222; 
 }
 
+header div{
+    float: right;
+}
+
+
+
 
 /* Début Menu */
 nav{

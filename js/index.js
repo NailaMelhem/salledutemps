@@ -30,6 +30,7 @@ app.initialize();
 
 var application = angular.module('application', ['ngRoute', 'ngTouch']);
 
+
 application.config(function($routeProvider){
     $routeProvider
         .when('/home', {

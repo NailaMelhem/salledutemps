@@ -9,13 +9,21 @@
         <link rel="stylesheet" type="text/css" href="css/reset.css" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-        <title>Coucou <(")</title>
+        <title>Salle du temps</title>
     </head>
 
     <!-- http://ajax.googleapis.com/ajax/services/search/web -->
     <body>
+        
         <div class="app">
-            <header>Chef des fourneaux</header>
+            <header>
+                Chef des fourneaux
+                <div  ng-controller="GlobalUserController"  ng-bind-html="afficherUser();">
+                </div>
+                <div  ng-controller="GlobalUserController"  ng-show="statusCo">
+                    <a href=""  ng-click='deconnecter()'>Se deconnecter</a>
+                </div>
+            </header>
 
             <div class="wrapper" ng-view>
                 
@@ -26,7 +34,7 @@
                     <!-- c'est ce qui permet de mettre juste un mot pour définir ta page-->
                     <li><a href="#/home">Maison</a></li>
                     <li><a href="#/position">E.T</a></li>
-                    <li><a href="#/login">Connexion</a></li>
+                    <!-- <li><a href="#/login">Connexion</a></li> -->
                     <li><a href="#/recettes">Recettes</a></li>
                     <li><a href="#/todolist">todo list</a></li>
                 </ul>
@@ -42,13 +50,18 @@
 
         <script type="text/javascript" src="js/index.js"></script>
 
-        <!-- Controllers -->
+        <!-- Controllers de application -->
         <script type="text/javascript" src="js/Controllers/HomeController.js"></script>
         <script type="text/javascript" src="js/Controllers/PositionController.js"></script>
         <script type="text/javascript" src="js/Controllers/UserController.js"></script>
         <script type="text/javascript" src="js/Controllers/RecetteAllController.js"></script>
         <script type="text/javascript" src="js/Controllers/CategorieRecetteController.js"></script>
         <script type="text/javascript" src="js/Controllers/TodoListController.js"></script>
+
+
+        <!-- Autres Cotrollers  -->
+        <script type="text/javascript" src="js/Controllers/GlobalUserController.js"></script>
+
 
         <!-- Service -->
         <script type="text/javascript" src="js/Services/SearchService.js"></script>

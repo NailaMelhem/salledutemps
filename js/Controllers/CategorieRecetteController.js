@@ -20,11 +20,11 @@ application.controller('CategorieRecetteController', function ($scope, $sce, Rec
 	}
 
 	$scope.recettesByCategorie= function(idCat){
-		alert("1{{"+idCat);
+		//alert("1{{"+idCat);
 		if(idCat!==0){
 			RecettesService.getAllRecettesByCategorie(idCat).success(
 				function(data){
-					alert("2");
+					//alert("2");
 					console.log("cattttre7", data.response);
 					$scope.recettes=data.response;
 					//return data.response;
@@ -32,7 +32,7 @@ application.controller('CategorieRecetteController', function ($scope, $sce, Rec
 				}
 			);
 		}else{
-			alert("3");
+			//alert("3");
 			return null;
 		}
 	}
