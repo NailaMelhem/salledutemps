@@ -18,10 +18,12 @@
         <div class="app">
             <header>
                 Chef des fourneaux
-                <div  ng-controller="GlobalUserController"  ng-bind-html="afficherUser();">
-                </div>
-                <div  ng-controller="GlobalUserController"  ng-show="statusCo">
-                    <a href=""  ng-click='deconnecter()'>Se deconnecter</a>
+                <div  ng-controller="GlobalUserController" >
+                    <div ng-bind-html="afficherUser();">
+                    </div>
+                    <div ng-show="statusCo">
+                        <a href=""  ng-click='deconnecter()'>Se deconnecter</a>
+                    </div>
                 </div>
             </header>
 
